@@ -2,7 +2,3 @@
   color: var(--dark);
   filter: brightness(4);
 }
-
-button:hover {
-  cursor: pointer;
-}
