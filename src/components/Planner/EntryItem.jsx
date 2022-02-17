@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEntries } from '../../context/PlannerContext';
 import styles from './EntryItem.css';
 
 export default function Entry({ id, title, date }) {
@@ -7,12 +8,14 @@ export default function Entry({ id, title, date }) {
     Math.ceil(relativeDays),
     'days'
   );
+  const { deleteEntry } = useEntries();
 
   return (
-    <Link to={`/entries/${id}`}>
-      <li>
+    <li>
+      <Link to={`/entries/${id}`}>
         {title} <span className={styles.date}>{relativeDate}</span>
-      </li>
-    </Link>
+      </Link>
+      <button onClick={(id) => deleteEntry(id)}>Delete</button>
+    </li>
   );
 }
