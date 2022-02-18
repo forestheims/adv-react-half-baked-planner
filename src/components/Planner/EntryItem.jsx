@@ -9,10 +9,10 @@ export default function Entry({ id, title, date }) {
   );
 
   return (
-    <Link to={`/entries/${id}`}>
-      <li>
+    <li>
+      <Link to={`/entries/${id}`}>
         {title} <span className={styles.date}>{relativeDate}</span>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 }
